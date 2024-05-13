@@ -6,7 +6,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         tags = "@SmokeTest", // bütün senaryolarda smoketest tag ine sahip olanları çalıştır
         features = {"src/test/java/FeatureFiles"}, // klasördeki
-        glue = {"StepDefinitions"}
+        glue = {"StepDefinitions"},
+        plugin = {"json:target/site/cucumber.json"}//Jenkins de report oluşması için JSON formatında sonucu alması lazım
 
 )
 
